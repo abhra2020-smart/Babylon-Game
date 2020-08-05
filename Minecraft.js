@@ -1,4 +1,4 @@
-import {BABYLON}
+// This is made with the built-in BabylonJS IDE on BabylonJS.com
 var createScene = function () {
     // This creates a basic Babylon Scene object (non-mesh)
     var scene = new BABYLON.Scene(engine);
