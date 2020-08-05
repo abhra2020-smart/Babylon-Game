@@ -1,4 +1,12 @@
-var createScene = function () {
+window.addEventListener('DOMContentLoaded', function(){
+            // get the canvas DOM element
+            var canvas = document.getElementById('renderCanvas');
+
+            // load the 3D engine
+            var engine = new BABYLON.Engine(canvas, true);
+
+            // createScene function that creates and return the scene
+           var createScene = function () {
     // This creates a basic Babylon Scene object (non-mesh)
     var scene = new BABYLON.Scene(engine);
 
@@ -15,7 +23,7 @@ var createScene = function () {
     camera.attachControl(canvas, true);
 
     // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
-    var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+    var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 1), scene);
 
     // Default intensity is 1. Let's dim the light a small amount
     light.intensity = 0.7;
@@ -35,3 +43,17 @@ var createScene = function () {
     return scene;
 
 };
+
+            // call the createScene function
+            var scene = createScene();
+
+            // run the render loop
+            engine.runRenderLoop(function(){
+                scene.render();
+            });
+
+            // the canvas/window resize event handler
+            window.addEventListener('resize', function(){
+                engine.resize();
+            });
+        });
