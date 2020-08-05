@@ -1,2 +1,3 @@
 # Minecraft-BabylonJS
-Please help me on a Minecraft project with BabylonJS
+
+This is a (soon-to-be) minecraft clone made with BabylonJS
