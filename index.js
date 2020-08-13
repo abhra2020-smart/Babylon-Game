@@ -5,8 +5,8 @@ window.addEventListener('DOMContentLoaded', function(){
             // load the 3D engine
             var engine = new BABYLON.Engine(canvas, true);
 
-            // createScene function that creates and return the scene
-           var createScene = function () {
+               // createScene function that creates and return the scene
+    var createScene = function () {
     // This creates a basic Babylon Scene object (non-mesh)
     var scene = new BABYLON.Scene(engine);
     scene.clearColor = BABYLON.Color3.Blue();
@@ -27,20 +27,27 @@ window.addEventListener('DOMContentLoaded', function(){
     light.intensity = 0.7;
 
     // Our built-in 'sphere' shape.
-    var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene);
-    var sun = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 5, segments: 32}, scene);
-    
-    // Move the sphere upward 1/2 its height
-    sphere.position.y = 1;
+    var sun = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene);
+    var tower = BABYLON.MeshBuilder.CreateBox("box", {width:2, height:10, segments: 32}, scene);
+    // the sphere position
+    tower.position.y = 5;
+    // the sun position
     sun.position.y = 50;
+    sun.position.z = 25;
+    sun.position.x = 10;
+
+    sun.overlayColor = BABYLON.Color3.Yellow()
+    tower.overlayColor = BABYLON.Color3.Gray()
+    scene.getMeshByID("sphere").renderOverlay = true;
+    scene.getMeshByID("box").renderOverlay = true;
 
     // Our built-in 'ground' shape.
-    var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
-
+    var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 12, height: 12}, scene);
+    scene.getMeshByID("ground").renderOverlay = true;
+    ground.overlayColor = BABYLON.Color3.Green()
     return scene;
 
-};
-            // call the createScene function
+};            // call the createScene function
             var scene = createScene();
 
             // run the render loop
