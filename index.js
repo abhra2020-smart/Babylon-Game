@@ -47,7 +47,8 @@ window.addEventListener('DOMContentLoaded', function(){
     ground.overlayColor = BABYLON.Color3.Green()
     return scene;
 
-};            // call the createScene function
+};           
+            // call the createScene function
             var scene = createScene();
 
             // run the render loop
