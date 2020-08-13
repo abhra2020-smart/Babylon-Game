@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', function(){
 
     // Our built-in 'sphere' shape.
     var sun = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene);
-    var tower = BABYLON.MeshBuilder.CreateBox("box", {width:2, height:10, segments: 32}, scene);
+    var tower = BABYLON.MeshBuilder.CreateBox("box", {width:2.2, height:10, segments: 32}, scene);
     // the sphere position
     tower.position.y = 5;
     // the sun position
@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function(){
     sun.position.x = 10;
 
     sun.overlayColor = BABYLON.Color3.Yellow()
-    tower.overlayColor = BABYLON.Color3.Gray()
+    tower.overlayColor = BABYLON.Color3.Black()
     scene.getMeshByID("sphere").renderOverlay = true;
     scene.getMeshByID("box").renderOverlay = true;
 
