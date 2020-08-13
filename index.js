@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', function(){
             // load the 3D engine
             var engine = new BABYLON.Engine(canvas, true);
 
-               // createScene function that creates and return the scene
+    // createScene function that creates and return the scene
     var createScene = function () {
     // This creates a basic Babylon Scene object (non-mesh)
     var scene = new BABYLON.Scene(engine);
