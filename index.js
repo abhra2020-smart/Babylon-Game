@@ -29,8 +29,12 @@ window.addEventListener('DOMContentLoaded', function(){
     // Our built-in 'sphere' shape.
     var sun = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene);
     var tower = BABYLON.MeshBuilder.CreateBox("box", {width:2.2, height:10, segments: 32}, scene);
-    // the sphere position
+    var towertop = BABYLON.MeshBuilder.CreateCylinder("cylinder", {width:1.1, height:5, segments: 32}, scene);
+    // the tower position
     tower.position.y = 5;
+    // tower top position
+    towertop.position.y = 10;
+    towertop.position.z = -0.000001;
     // the sun position
     sun.position.y = 50;
     sun.position.z = 25;
@@ -38,8 +42,11 @@ window.addEventListener('DOMContentLoaded', function(){
 
     sun.overlayColor = BABYLON.Color3.Yellow()
     tower.overlayColor = BABYLON.Color3.Black()
+    towertop.overlayColor = BABYLON.Color3.Black()
+
     scene.getMeshByID("sphere").renderOverlay = true;
     scene.getMeshByID("box").renderOverlay = true;
+    scene.getMeshByID("cylinder").renderOverlay = true;
 
     // Our built-in 'ground' shape.
     var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 12, height: 12}, scene);
@@ -47,8 +54,8 @@ window.addEventListener('DOMContentLoaded', function(){
     ground.overlayColor = BABYLON.Color3.Green()
     return scene;
 
-};           
-            // call the createScene function
+};
+     // call the createScene function
             var scene = createScene();
 
             // run the render loop
