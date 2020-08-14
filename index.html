@@ -5,7 +5,21 @@
     <title>Babylon</title>
     <!--- Link to the last version of BabylonJS --->
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
-    <style src="style/index.css"></style>
+    <style>
+      html, body {
+            overflow: hidden;
+            width   : 100%;
+            height  : 100%;
+            margin  : 0;
+            padding : 0;
+        }
+
+        #renderCanvas {
+            width   : 100%;
+            height  : 100%;
+            touch-action: none;
+        }
+</style>
 </head>
 <body>
     <canvas id="renderCanvas"></canvas>
